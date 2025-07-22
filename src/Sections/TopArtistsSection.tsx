@@ -9,14 +9,14 @@ export default function TopArtistsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const artists = [
-    { name: "Kendrick Lamar", note: "Rappeur iconique", image: "/Kendrick-Lamar-Header.jpeg" },
-    { name: "Dua Lipa", note: "Pop internationale", image: "/Dua-Lipa.jpeg" },
-    { name: "Damso", note: "Rap belge moderne", image: "/Damso.jpg" },
-    { name: "Rosalía", note: "Fusion flamenco/urbain", image: "/Rosalia.jpg" },
-    { name: "Kerchak", note: "Artiste émergent", image: "/Kerchak.jpeg" },
-    { name: "Taylor Swift", note: "Icône pop mondiale", image: "/Taylor-Swift.jpg" },
-    { name: "The Weeknd", note: "R&B contemporain", image: "/The-Weeknd.jpg" },
-    { name: "Billie Eilish", note: "Pop alternative", image: "/Billie-Eilish.jpg" },
+    { name: "Kendrick Lamar", note: "Rappeur iconique", image: "/artists/Kendrick-Lamar-Header.jpeg" },
+    { name: "Dua Lipa", note: "Pop internationale", image: "/artists/Dua-Lipa.jpeg" },
+    { name: "Damso", note: "Rap belge moderne", image: "/artists/Damso.jpg" },
+    { name: "Rosalía", note: "Fusion flamenco/urbain", image: "/artists/Rosalia.jpg" },
+    { name: "Kerchak", note: "Artiste émergent", image: "/artists/Kerchak.jpeg" },
+    { name: "Taylor Swift", note: "Icône pop mondiale", image: "/artists/Taylor-Swift.jpg" },
+    { name: "The Weeknd", note: "R&B contemporain", image: "/artists/The-Weeknd.jpg" },
+    { name: "Billie Eilish", note: "Pop alternative", image: "/artists/Billie-Eilish.jpg" },
   ];
 
   const scroll = (direction: "left" | "right") => {
