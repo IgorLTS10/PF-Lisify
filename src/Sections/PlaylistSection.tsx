@@ -1,25 +1,146 @@
-// src/components/PlaylistSection.tsx
-export default function PlaylistSection() {
-  const playlists = Array.from({ length: 6 }, (_, i) => ({
-    title: `Playlist ${i + 1}`,
-    subtitle: "Par Mix AI",
-  }));
+"use client";
 
-  return (
+import { useState } from "react";
+import { X, Play, Plus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export default function PlaylistSection() {
+  const playlists = [
+    {
+      title: "Mood Chill 🌙",
+      subtitle: "Par Mix AI",
+      image: "/playlists/playlist-chill.jpg",
+    },
+    {
+      title: "Boost Workout 💪",
+      subtitle: "Par Mix AI",
+      image: "/playlists/playlist-workout.jpeg",
+    },
+    {
+      title: "Soirée entre amis 🎉",
+      subtitle: "Par Mix AI",
+      image: "/playlists/playlist-friends.jpg",
+    },
+    {
+      title: "Code & Focus 👨‍💻",
+      subtitle: "Par Mix AI",
+      image: "/playlists/playlist-focus.jpeg",
+    },
+    {
+      title: "Dimanche douceur ☕",
+      subtitle: "Par Mix AI",
+      image: "/playlists/playlist-sunday.jpg",
+    },
+    {
+      title: "90's Throwback 📼",
+      subtitle: "Par Mix AI",
+      image: "/playlists/playlist-90s.jpeg",
+    },
+    {
+      title: "Pop Hits 🔥",
+      subtitle: "Par Mix AI",
+      image: "/playlists/playlist-pop.jpeg",
+    }
+  ];
+
+  const songs = [
+    { title: "Lofi Dreams", artist: "DJ Soft", duration: "2:45" },
+    { title: "Relaxation Tape", artist: "Calma", duration: "3:10" },
+    { title: "Evening Mood", artist: "Nostalgic", duration: "4:02" },
+    { title: "Midnight Chill", artist: "Nova", duration: "3:35" },
+    { title: "Rainy Beats", artist: "DropSound", duration: "2:58" },
+  ];
+
+  const [selectedPlaylist, setSelectedPlaylist] = useState<null | typeof playlists[0]>(null);
+
+   return (
     <section className="mb-10">
       <h2 className="text-xl font-bold mb-4">🎵 Playlists recommandées</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        {playlists.map((item, i) => (
+
+      <div className="flex gap-6 overflow-x-auto overflow-y-hidden px-4 pb-4 -mx-4 scroll-smooth snap-x snap-mandatory whitespace-nowrap no-scrollbar">
+        {playlists.map((playlist, i) => (
           <div
             key={i}
-            className="bg-zinc-800 hover:bg-zinc-700 transition p-4 rounded-lg cursor-pointer"
+            className="flex-shrink-0 w-40 snap-start bg-zinc-800 hover:bg-zinc-700 transition p-4 rounded-lg cursor-pointer"
+            onClick={() => setSelectedPlaylist(playlist)}
           >
-            <div className="w-full h-36 bg-zinc-600 rounded mb-3" />
-            <div className="text-sm font-semibold">{item.title}</div>
-            <div className="text-xs text-zinc-400">{item.subtitle}</div>
+            <div
+              className="w-full h-36 rounded mb-3 bg-center bg-cover"
+              style={{ backgroundImage: `url(${playlist.image})` }}
+            />
+            <div className="text-sm font-semibold">{playlist.title}</div>
+            <div className="text-xs text-zinc-400">{playlist.subtitle}</div>
           </div>
         ))}
       </div>
+
+      {/* Modal with animation */}
+      <AnimatePresence>
+        {selectedPlaylist && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.3 }}
+              className="bg-zinc-900 p-6 rounded-xl w-full max-w-md relative"
+            >
+              <button
+                className="absolute top-3 right-3 text-zinc-400 hover:text-white"
+                onClick={() => setSelectedPlaylist(null)}
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={selectedPlaylist.image}
+                  alt={selectedPlaylist.title}
+                  className="w-20 h-20 rounded object-cover"
+                />
+                <div>
+                  <div className="text-lg font-bold">{selectedPlaylist.title}</div>
+                  <div className="text-sm text-zinc-400">{selectedPlaylist.subtitle}</div>
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex gap-3 mb-4">
+                <button className="flex items-center gap-2 bg-white text-black text-sm px-3 py-2 rounded-full hover:bg-zinc-200 transition">
+                  <Play className="w-4 h-4" />
+                  Lire
+                </button>
+                <button className="flex items-center gap-2 bg-zinc-700 text-white text-sm px-3 py-2 rounded-full hover:bg-zinc-600 transition">
+                  <Plus className="w-4 h-4" />
+                  Ajouter à la file
+                </button>
+              </div>
+
+              {/* Song list */}
+              <ul className="space-y-2 max-h-60 overflow-y-auto">
+                {songs.map((song, i) => (
+                  <li
+                    key={i}
+                    className="flex justify-between text-sm text-zinc-200 border-b border-zinc-700 pb-1"
+                  >
+                    <div>
+                      <div className="font-semibold">{song.title}</div>
+                      <div className="text-xs text-zinc-400">{song.artist}</div>
+                    </div>
+                    <div className="text-xs text-zinc-400">{song.duration}</div>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
