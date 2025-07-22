@@ -1,11 +1,15 @@
 import React from "react";
+import Link from "next/link";
+
 
 export interface GlassIconsItem {
   icon: React.ReactElement;
   color: string;
   label: string;
+  href: string; // ✅ Ajouté ici
   customClass?: string;
 }
+
 
 export interface GlassIconsProps {
   items: GlassIconsItem[];
@@ -31,15 +35,12 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
 
   return (
     <div className={`flex flex-col items-center gap-6 ${className || ""}`}>
-
       {items.map((item, index) => (
-        <button
+        <Link
           key={index}
-          type="button"
+          href={item.href}
           aria-label={item.label}
-          className={`relative bg-transparent outline-none w-12 h-12 [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${
-            item.customClass || ""
-          }`}
+          className={`relative bg-transparent outline-none w-12 h-12 [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${item.customClass || ""}`}
         >
           <span
             className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[15deg] group-hover:[transform:rotate(25deg)_translate3d(-0.5em,-0.5em,0.5em)]"
@@ -66,10 +67,10 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
           <span className="absolute top-full left-1/2 -translate-x-1/2 text-center text-[10px] text-zinc-400 opacity-0 group-hover:opacity-100 transition-all">
             {item.label}
           </span>
-
-        </button>
+        </Link>
       ))}
     </div>
+
   );
 };
 
