@@ -7,10 +7,10 @@ export default function Sidebar() {
 
   const items = [
     { icon: <House />, color: "blue", label: "Home", href: "/" },
-    { icon: <Search />, color: "blue", label: "Search", href: "/search" },
-    { icon: <Library />, color: "blue", label: "Library", href: "/library" },
-    { icon: <ListMusic />, color: "blue", label: "Playlists", href: "/playlists" },
-    { icon: <Heart />, color: "blue", label: "Favorites", href: "/favorites" },
+    { icon: <Search />, color: "red", label: "Search", href: "/search" },
+    { icon: <Library />, color: "red", label: "Library", href: "/library" },
+    { icon: <ListMusic />, color: "red", label: "Playlists", href: "/playlists" },
+    { icon: <Heart />, color: "red", label: "Favorites", href: "/favorites" },
     { icon: <Settings />, color: "blue", label: "Settings", href: "/settings" },
     { icon: <BadgeQuestionMark />, color: "blue", label: "Help", href: "/help" },
     { icon: <Info />, color: "blue", label: "About", href: "/about" },
