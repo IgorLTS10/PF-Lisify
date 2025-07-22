@@ -21,8 +21,8 @@ export default function Player() {
       <div className="flex items-center gap-4">
         <div className="w-14 h-14 bg-zinc-700 rounded" />
         <div>
-          <div className="text-sm font-semibold">Nom du morceau</div>
-          <div className="text-xs text-zinc-400">Artiste</div>
+          <div className="text-sm font-semibold">Overseas</div>
+          <div className="text-xs text-zinc-400">D-Block Europe, Central Cee</div>
         </div>
       </div>
 
