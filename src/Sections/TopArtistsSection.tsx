@@ -9,14 +9,14 @@ export default function TopArtistsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const artists = [
-    { name: "Kendrick Lamar", note: "Rappeur iconique", image: "/artists/Kendrick-Lamar-Header.jpeg" },
-    { name: "Dua Lipa", note: "Pop internationale", image: "/artists/Dua-Lipa.jpeg" },
-    { name: "Damso", note: "Rap belge moderne", image: "/artists/Damso.jpg" },
-    { name: "Rosalía", note: "Fusion flamenco/urbain", image: "/artists/Rosalia.jpg" },
-    { name: "Kerchak", note: "Artiste émergent", image: "/artists/Kerchak.jpeg" },
-    { name: "Taylor Swift", note: "Icône pop mondiale", image: "/artists/Taylor-Swift.jpg" },
-    { name: "The Weeknd", note: "R&B contemporain", image: "/artists/The-Weeknd.jpg" },
-    { name: "Billie Eilish", note: "Pop alternative", image: "/artists/Billie-Eilish.jpg" },
+    { name: "Kendrick Lamar", note: "Iconic rapper", image: "/artists/Kendrick-Lamar-Header.jpeg" },
+    { name: "Dua Lipa", note: "International pop", image: "/artists/Dua-Lipa.jpeg" },
+    { name: "Damso", note: "Modern Belgian rap", image: "/artists/Damso.jpg" },
+    { name: "Rosalía", note: "Flamenco/urban fusion", image: "/artists/Rosalia.jpg" },
+    { name: "Kerchak", note: "Emerging artist", image: "/artists/Kerchak.jpeg" },
+    { name: "Taylor Swift", note: "Global pop icon", image: "/artists/Taylor-Swift.jpg" },
+    { name: "The Weeknd", note: "Contemporary R&B", image: "/artists/The-Weeknd.jpg" },
+    { name: "Billie Eilish", note: "Alternative pop", image: "/artists/Billie-Eilish.jpg" },
   ];
 
   const scroll = (direction: "left" | "right") => {
@@ -30,9 +30,9 @@ export default function TopArtistsSection() {
 
   return (
     <section className="mb-10 relative">
-      <h2 className="text-xl font-bold mb-4">🔥 Top artistes</h2>
+      <h2 className="text-xl font-bold mb-4">🔥 Top Artists</h2>
 
-      {/* Flèche gauche */}
+      {/* Left arrow */}
       <button
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-900/80 hover:bg-zinc-800 p-2 rounded-full shadow hidden md:block"
         onClick={() => scroll("left")}
@@ -40,7 +40,7 @@ export default function TopArtistsSection() {
         <ChevronLeft className="w-6 h-6 text-white" />
       </button>
 
-      {/* Flèche droite */}
+      {/* Right arrow */}
       <button
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-900/80 hover:bg-zinc-800 p-2 rounded-full shadow hidden md:block"
         onClick={() => scroll("right")}
@@ -51,16 +51,16 @@ export default function TopArtistsSection() {
       <div
         ref={scrollRef}
         className="flex gap-6 overflow-x-auto overflow-y-hidden px-4 pb-6 -mx-4 snap-x snap-mandatory scroll-smooth whitespace-nowrap scrollbar-hide cursor-grab active:cursor-grabbing select-none"
-        >
+      >
 
         {artists.map((artist, i) => (
           <div
             key={i}
             className="inline-block snap-center flex-shrink-0"
             style={{ width: 220 }}
-            >
+          >
             <div className="flex flex-col items-center text-center">
-                <TiltedCard
+              <TiltedCard
                 imageSrc={artist.image}
                 altText={artist.name}
                 captionText=""
@@ -73,13 +73,13 @@ export default function TopArtistsSection() {
                 showMobileWarning={false}
                 showTooltip={false}
                 displayOverlayContent={false}
-                />
-                <div className="mt-3">
+              />
+              <div className="mt-3">
                 <div className="text-sm font-semibold text-white">{artist.name}</div>
                 <div className="text-xs text-zinc-400">{artist.note}</div>
-                </div>
+              </div>
             </div>
-            </div>
+          </div>
 
         ))}
       </div>

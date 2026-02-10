@@ -7,7 +7,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 export default function AboutPage() {
   return (
     <main className="flex flex-col md:flex-row items-start justify-center px-6 py-12 gap-10 md:gap-20 text-white">
-      {/* Colonne gauche : ProfileCard */}
+      {/* Left column: ProfileCard */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
@@ -16,10 +16,10 @@ export default function AboutPage() {
       >
         <ProfileCard
           name="Igor Chrzyptowicz"
-          title="Développeur Web Fullstack"
+          title="Fullstack Web Developer"
           handle="igorcodes"
-          status="Disponible"
-          contactText="Voir mon GitHub"
+          status="Available"
+          contactText="View my GitHub"
           avatarUrl="/avatar.jpg"
           showUserInfo={true}
           enableTilt={true}
@@ -30,7 +30,7 @@ export default function AboutPage() {
         />
       </motion.div>
 
-      {/* Colonne droite : Sections animées séparément */}
+      {/* Right column: Animated sections */}
       <div className="w-full md:w-2/3 space-y-10">
         {/* Description */}
         <motion.div
@@ -39,7 +39,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
         >
           <p className="text-zinc-100 text-base md:text-lg">
-            Ce site a été conçu et développé par moi en <strong>Juillet 2025</strong> dans le but de renforcer mon portfolio de projets web créatifs. Il me permet d’expérimenter des interfaces modernes et des animations avancées.
+            This site was designed and developed by me in <strong>July 2025</strong> to strengthen my portfolio of creative web projects. It allows me to experiment with modern interfaces and advanced animations.
           </p>
         </motion.div>
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
         >
-          <h2 className="text-lg font-semibold mb-3">🛠️ Stack utilisée</h2>
+          <h2 className="text-lg font-semibold mb-3">🛠️ Tech Stack</h2>
           <div className="flex flex-wrap gap-3">
             {[
               "Next.js",
@@ -71,60 +71,60 @@ export default function AboutPage() {
         </motion.div>
 
         {/* Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 1.0 }}
-          >
-            <h2 className="text-lg font-semibold mb-5">📬 Contacte-moi</h2>
-            <div className="space-y-4">
-              {/* GitHub */}
-              <a
-                href="https://github.com/IgorLTS10"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-xl px-5 py-3 transition group"
-              >
-                <Github className="w-6 h-6 text-white group-hover:text-violet-400 transition" />
-                <div className="flex flex-col">
-                  <span className="text-white font-medium">GitHub</span>
-                  <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition">
-                    @IgorLTS10
-                  </span>
-                </div>
-              </a>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 1.0 }}
+        >
+          <h2 className="text-lg font-semibold mb-5">📬 Contact Me</h2>
+          <div className="space-y-4">
+            {/* GitHub */}
+            <a
+              href="https://github.com/IgorLTS10"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-xl px-5 py-3 transition group"
+            >
+              <Github className="w-6 h-6 text-white group-hover:text-violet-400 transition" />
+              <div className="flex flex-col">
+                <span className="text-white font-medium">GitHub</span>
+                <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition">
+                  @IgorLTS10
+                </span>
+              </div>
+            </a>
 
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/in/igor-chrzyptowicz-3183911b7/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-xl px-5 py-3 transition group"
-              >
-                <Linkedin className="w-6 h-6 text-white group-hover:text-blue-400 transition" />
-                <div className="flex flex-col">
-                  <span className="text-white font-medium">LinkedIn</span>
-                  <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition">
-                    igor-chrzyptowicz
-                  </span>
-                </div>
-              </a>
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/igor-chrzyptowicz-3183911b7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-xl px-5 py-3 transition group"
+            >
+              <Linkedin className="w-6 h-6 text-white group-hover:text-blue-400 transition" />
+              <div className="flex flex-col">
+                <span className="text-white font-medium">LinkedIn</span>
+                <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition">
+                  igor-chrzyptowicz
+                </span>
+              </div>
+            </a>
 
-              {/* Email */}
-              <a
-                href="mailto:igorDevWeb@proton.me"
-                className="flex items-center gap-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-xl px-5 py-3 transition group"
-              >
-                <Mail className="w-6 h-6 text-white group-hover:text-rose-400 transition" />
-                <div className="flex flex-col">
-                  <span className="text-white font-medium">Email</span>
-                  <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition">
-                    igorDevWeb@proton.me
-                  </span>
-                </div>
-              </a>
-            </div>
-          </motion.div>
+            {/* Email */}
+            <a
+              href="mailto:igorDevWeb@proton.me"
+              className="flex items-center gap-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-xl px-5 py-3 transition group"
+            >
+              <Mail className="w-6 h-6 text-white group-hover:text-rose-400 transition" />
+              <div className="flex flex-col">
+                <span className="text-white font-medium">Email</span>
+                <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition">
+                  igorDevWeb@proton.me
+                </span>
+              </div>
+            </a>
+          </div>
+        </motion.div>
 
       </div>
     </main>

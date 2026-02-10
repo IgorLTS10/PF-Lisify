@@ -38,7 +38,7 @@ export default function SuggestedTracksSection() {
 
   return (
     <section className="mb-10">
-      <h2 className="text-xl font-bold mb-4">✨ Sons proposés pour toi</h2>
+      <h2 className="text-xl font-bold mb-4">✨ Suggested for You</h2>
 
       <div className="flex gap-6 overflow-x-auto overflow-y-hidden px-4 pb-4 -mx-4 scroll-smooth snap-x snap-mandatory whitespace-nowrap no-scrollbar">
         {tracks.map((track, i) => (

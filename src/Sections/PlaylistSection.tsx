@@ -8,37 +8,37 @@ export default function PlaylistSection() {
   const playlists = [
     {
       title: "Mood Chill 🌙",
-      subtitle: "Par Mix AI",
+      subtitle: "By AI Mix",
       image: "/playlists/playlist-chill.jpg",
     },
     {
       title: "Boost Workout 💪",
-      subtitle: "Par Mix AI",
+      subtitle: "By AI Mix",
       image: "/playlists/playlist-workout.jpeg",
     },
     {
-      title: "Soirée entre amis 🎉",
-      subtitle: "Par Mix AI",
+      title: "Party with Friends 🎉",
+      subtitle: "By AI Mix",
       image: "/playlists/playlist-friends.jpg",
     },
     {
       title: "Code & Focus 👨‍💻",
-      subtitle: "Par Mix AI",
+      subtitle: "By AI Mix",
       image: "/playlists/playlist-focus.jpeg",
     },
     {
-      title: "Dimanche douceur ☕",
-      subtitle: "Par Mix AI",
+      title: "Sunday Vibes ☕",
+      subtitle: "By AI Mix",
       image: "/playlists/playlist-sunday.jpg",
     },
     {
       title: "90's Throwback 📼",
-      subtitle: "Par Mix AI",
+      subtitle: "By AI Mix",
       image: "/playlists/playlist-90s.jpeg",
     },
     {
       title: "Pop Hits 🔥",
-      subtitle: "Par Mix AI",
+      subtitle: "By AI Mix",
       image: "/playlists/playlist-pop.jpeg",
     }
   ];
@@ -53,9 +53,9 @@ export default function PlaylistSection() {
 
   const [selectedPlaylist, setSelectedPlaylist] = useState<null | typeof playlists[0]>(null);
 
-   return (
+  return (
     <section className="mb-10">
-      <h2 className="text-xl font-bold mb-4">🎵 Playlists recommandées</h2>
+      <h2 className="text-xl font-bold mb-4">🎵 Recommended Playlists</h2>
 
       <div className="flex gap-6 overflow-x-auto overflow-y-hidden px-4 pb-4 -mx-4 scroll-smooth snap-x snap-mandatory whitespace-nowrap no-scrollbar">
         {playlists.map((playlist, i) => (
@@ -114,11 +114,11 @@ export default function PlaylistSection() {
               <div className="flex gap-3 mb-4">
                 <button className="flex items-center gap-2 bg-white text-black text-sm px-3 py-2 rounded-full hover:bg-zinc-200 transition">
                   <Play className="w-4 h-4" />
-                  Lire
+                  Play
                 </button>
                 <button className="flex items-center gap-2 bg-zinc-700 text-white text-sm px-3 py-2 rounded-full hover:bg-zinc-600 transition">
                   <Plus className="w-4 h-4" />
-                  Ajouter à la file
+                  Add to Queue
                 </button>
               </div>
 
