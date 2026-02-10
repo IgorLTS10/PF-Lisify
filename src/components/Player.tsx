@@ -2,11 +2,11 @@
 "use client";
 
 import { useState } from "react";
-import { Play, StepForward, StepBack, StretchVertical, CirclePlay } from "lucide-react";
+import { StepForward, StepBack, StretchVertical, CirclePlay } from "lucide-react";
 import ElasticSlider from "./ui/ElasticSlider";
 
 
-  
+
 export default function Player() {
   const [isPlaying, setIsPlaying] = useState(false);
 

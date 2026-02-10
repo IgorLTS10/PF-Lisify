@@ -25,7 +25,7 @@ export default function Topbar() {
           Se connecter
         </button>
         <button className="text-sm bg-white text-black px-4 py-2 rounded-full transition">
-          S'inscrire
+          S&apos;inscrire
         </button>
       </div>
     </header>
